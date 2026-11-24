@@ -8,7 +8,6 @@ lb config noauto \
     --bootloaders "syslinux,grub-efi" \
     --debian-installer none \
     --archive-areas "main contrib non-free-firmware" \
-    --apt-recommends false \
     --chroot-squashfs-compression-type gzip \
     --iso-application "SEU Linux" \
     --iso-volume "SEU_LINUX" \

@@ -30,7 +30,6 @@ The ISO image generated has the following settings (auto/config):
 - Bootloaders: syslinux, grub-efi
 - Debian Installer: none
 - Archive Areas: main contrib non-free-firmware
-- APT Recommends: false
 - Chroot SquashFS Compression Type: gzip
 - ISO Application: SEU Linux
 - ISO Volume: SEU_LINUX
@@ -59,6 +58,21 @@ Debian 13 with the XFCE desktop, LightDM login manager, NetworkManager, and basi
 1. Download the ISO file from the GitHub Actions build artifacts.
 2. Create a new VM in your preferred virtual machine software, or place it in a bootable USB drive to run on physical hardware.
 3. Boot from the ISO. SEU Linux starts directly into the desktop. Changes are kept in RAM and lost on shutdown.
+
+#### Running with QEMU
+
+Install qemu `brew install qemu` on macOS, or use your package manager on Linux (e.g., `sudo apt install qemu`).
+
+Navigate to the directory containing the ISO file, then run the following command to start the ISO with QEMU:
+```bash
+qemu-system-x86_64 \
+  -m 4G -smp 2 \
+  -accel tcg \
+  -cdrom seu-linux.iso -boot d \
+  -vga std \
+  -device qemu-xhci -device usb-tablet \
+  -nic user,model=virtio-net-pci
+```
 
 ### OR
 
