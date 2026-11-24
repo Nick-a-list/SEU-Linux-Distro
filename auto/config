@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+lb config noauto \ 
+    --distribution trixie \
+    --architectures amd64 \
+    --binary-images iso-hybrid \
+    --bootloaders "syslinux,grub-efi" \
+    --debian-installer none \
+    --archive-areas "main contrib non-free-firmware" \
+    --apt-recommends false \
+    --chroot-squashfs-compression-type gzip \
+    --iso-application "SEU Linux" \
+    --iso-volume "SEU_LINUX" \
+    --memtest none \
+    "${@}"
