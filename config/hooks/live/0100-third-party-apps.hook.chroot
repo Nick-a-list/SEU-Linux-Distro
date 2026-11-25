@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefall
+set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 cd /tmp
 
@@ -11,7 +11,7 @@ curl -fsSLo /etc/apt/sources.list.d/signal-desktop.sources https://updates.signa
 curl -fsSLo protonvpn-repo.deb https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.10_all.deb
 dpkg -i ./protonvpn-repo.deb
 
-apt-get update && apt-get install -y signal-desktop protonvpn-gnome-desktop
+apt-get update && apt-get install -y signal-desktop proton-vpn-gnome-desktop
 
 # Bitwarden .deb (URL from memory)
 curl -fsSLo bitwarden.deb "https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb"
