@@ -1,0 +1,4 @@
+set -e
+for p in firefox-esr timeshift signal-desktop proton-vpn-gnome-desktop bitwarden marktext; do
+  dpkg -l | grep -qi "^ii  $p" || { echo "MISSING: $p"; exit 1; }
+done
