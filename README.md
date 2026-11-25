@@ -44,6 +44,12 @@ Debian 13 with the XFCE desktop, LightDM login manager, NetworkManager, and basi
 - Firefox ESR (web browser)
 - Timeshift (system snapshots and recovery)
 
+**Third-party applications**
+- Signal Desktop (secure messaging)
+- Proton VPN (VPN client)
+- Bitwarden (password manager)
+- MarkText (Markdown editor)
+
 ## How to Run
 
 ### Running the ISO
